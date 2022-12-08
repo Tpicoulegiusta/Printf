@@ -6,12 +6,11 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:44:16 by tpicoule          #+#    #+#             */
-/*   Updated: 2022/12/07 16:03:44 by tpicoule         ###   ########.fr       */
+/*   Updated: 2022/12/08 09:48:16 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
 
 int	ft_check(char str, va_list arg)
 {
@@ -35,7 +34,7 @@ int	ft_check(char str, va_list arg)
 	if (str == 'x')
 		i += ft_putnbrexa(va_arg(arg, unsigned int));
 	if (str == 'X')
-		i += ft_putnbrexa2(va_arg(arg, unsigned int));
+		i += ft_putnbrexaupper(va_arg(arg, unsigned int));
 	if (str == '%')
 		i += ft_putchar('%');
 	return (i);
@@ -69,6 +68,8 @@ int	ft_printf(const char *str, ...)
 /*
 int	main ()
 {
-	//printf("count %d\n", printf("%p\n", ""));
-	ft_printf("count %d\n", ft_printf("%p\n", ""));
+    char    *str = "hello";
+
+	printf("[ptr] count %d\n", printf("%p\n", str));
+	ft_printf("[ftr] count %d\n", ft_printf("%p\n", str));
 }*/
